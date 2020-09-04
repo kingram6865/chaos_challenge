@@ -30,7 +30,64 @@ Main Container (App)
 -Character Image (Update API)
 
 #### 5. API
-  
+'''  
+{
+    "records": [
+        {
+            "id": "recztKhOQhT8R0UfY",
+            "fields": {
+                "intelligence": 10,
+                "character_name": "Splash",
+                "strength": 4,
+                "objid": 1,
+                "Field dexterity": 13,
+                "player_name": "Ken",
+                "class": "Druid",
+                "race": "Elf",
+                "charisma": 8,
+                "wisdom": 10,
+                "constitution": 8
+            },
+            "createdTime": "2020-09-04T06:49:05.000Z"
+        },
+        {
+            "id": "recLErkJbnCVAmg4P",
+            "fields": {
+                "intelligence": 10,
+                "character_name": "Random Randall ",
+                "strength": 9,
+                "objid": 2,
+                "Field dexterity": 12,
+                "player_name": "Mark",
+                "class": "Barbarian",
+                "race": "Half-Orc",
+                "charisma": 10,
+                "wisdom": 7,
+                "constitution": 16
+            },
+            "createdTime": "2020-09-04T06:49:05.000Z"
+        },
+        {
+            "id": "recqwjrHKgQ1vSbqq",
+            "fields": {
+                "intelligence": 16,
+                "character_name": "Mack",
+                "strength": 11,
+                "objid": 3,
+                "Field dexterity": 13,
+                "player_name": "Willie",
+                "class": "Monk",
+                "race": "Half-Orc",
+                "charisma": 13,
+                "wisdom": 9,
+                "constitution": 13
+            },
+            "createdTime": "2020-09-04T06:49:05.000Z"
+        }
+    ],
+    "offset": "recqwjrHKgQ1vSbqq"
+}
+'''
 
 #### 6. MVP
   Minimum features:
@@ -47,3 +104,7 @@ Main Container (App)
 	-Gamemaster version => A repository of games and associated characters, tied to a player (user's) character
 
 #### 8. SWOT Analysis
+	- Strengths
+	- Weaknesses
+	- Opportunities
+	- Threats
