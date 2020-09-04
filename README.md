@@ -18,7 +18,7 @@ This was a humorous take on character creation, as often players spend hours cra
 ![Chaos Challenge Wireframe at Cloundinary](https://res.cloudinary.com/dk8xr0vts/image/upload/c_scale,w_445/v1599237792/Project%201/Project%202/D_D_Chaos_Challenge_Character_Generator_Desktop_bea9lh.png)
 
 ### Tablet
-![Chaos Challenge Wireframe at Cloundinary](https://res.cloudinary.com/dk8xr0vts/image/upload/c_scale,w_422/v1599237792/Project%201/Project%202/D_D_Chaos_Challenge_Character_Generator_Tablet_dty319.png)
+![Chaos Challenge Wireframe at Cloundinary](https://res.cloudinary.com/dk8xr0vts/image/upload/c_scale,w_411/v1599239439/Project%201/Project%202/D_D_Chaos_Challenge_Character_Generator_Tablet_elt4if.png)
 
 ## 4. Component Hierarchy
 Main Container (App)
