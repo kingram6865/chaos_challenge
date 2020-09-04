@@ -30,7 +30,7 @@ Main Container (App)
 -Character Image (Update API)
 
 #### 5. API
-'''  
+```  
 {
     "records": [
         {
@@ -87,7 +87,7 @@ Main Container (App)
     ],
     "offset": "recqwjrHKgQ1vSbqq"
 }
-'''
+```
 
 #### 6. MVP
   Minimum features:
@@ -96,15 +96,15 @@ Main Container (App)
 
 #### 7. Post-MVP
 	Most of the post-MVP requires an RDBMS or NoSQL database
-	- Character Inventory Table
-	- Randomly select inventory
-	- Button => Randomly generate character names
-	- Component => Add a character image (svg, jpg, gif, png)
-	- Component => Character bio
-	- Gamemaster version => A repository of games and associated characters, tied to a player (user's) character
+	-Character Inventory Table
+	-Randomly select inventory
+	-Button => Randomly generate character names
+	-Component => Add a character image (svg, jpg, gif, png)
+	-Component => Character bio
+	-Gamemaster version => A repository of games and associated characters, tied to a player (user's) character
 
 #### 8. SWOT Analysis
-	- Strengths
-	- Weaknesses
-	- Opportunities
-	- Threats
+	-Strengths
+	-Weaknesses
+	-Opportunities
+	-Threats
