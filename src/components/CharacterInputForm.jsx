@@ -16,7 +16,7 @@ function CharacterInputForm() {
       <span><label htmlFor="playerName">Charisma: </label><input name="charisma" type="number" /><StatsButton name="Roll Cha" /> </span><br />
       <span><label htmlFor="playerName">Race: </label><input name="race" type="number" placeholder="Race"/><StatsButton name="Roll Race" /> </span><br />
       <span><label htmlFor="playerName">Class: </label><input name="class" type="number" placeholder="Class"/><StatsButton name="Roll Class" /> </span><br />
-      <span>Generator Button | Save Button</span>
+      <span><button>Generate Character</button> | <input type="submit"value="Save Character" /></span>
     </form>
   )
 }
