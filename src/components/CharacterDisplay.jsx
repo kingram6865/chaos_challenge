@@ -8,7 +8,7 @@ import SavedCharacterData from './SavedCharacterData';
 function CharacterDisplay(props) {
   const { selectedCharacter } = props;
   const [charData, setCharData] = useState({});
-
+  console.log(charData);
   // console.log(`[CharacterDisplay] ${JSON.stringify(selectedCharacter)}`);
 
   async function retrieveCharacter(){
@@ -25,7 +25,7 @@ function CharacterDisplay(props) {
 
   useEffect(() => {
     setCharData(selectedCharacter);
-  }, []);  
+  }, [selectedCharacter]);  
 
   useEffect(() => {
     retrieveCharacter();
