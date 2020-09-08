@@ -1,4 +1,5 @@
 import React from 'react';
+import { generateAttribute, generateRace, generateClass } from '../services';
 
 /**
  * Generate a complete character randomly.

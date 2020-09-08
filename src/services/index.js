@@ -8,9 +8,9 @@ function getDieRoll(max){
  * 
  */
 
-function generateAttribute(){
+export function generateAttribute(){
   // var result = getDieRoll(6) + getDieRoll(6) + getDieRoll(6);
-  result = 0;
+  let result = 0;
   for (let i=1; i<=3; i++){
     let thisResult = getDieRoll(6) + getDieRoll(6) + getDieRoll(6);
     result = (thisResult > result) ? thisResult : result;
@@ -19,10 +19,10 @@ function generateAttribute(){
   return result;
 }
 
-function generateRace(){
+export function generateRace(){
 	return getDieRoll(8);
 }
 
-function generateClass(){
+export function generateClass(){
 	return getDieRoll(12);
 }
