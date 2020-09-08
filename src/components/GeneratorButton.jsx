@@ -1,6 +1,15 @@
 import React from 'react';
 
-function GeneratorButton() {
+/**
+ * Generate a complete character randomly.
+ * 
+ * 
+ * @param {*} props 
+ * 
+ */
+
+function GeneratorButton(props) {
+  // console.log(props);
 
   return (
     <div>

@@ -1,14 +1,22 @@
 import React from 'react';
 
+/**
+ * Take character info from props and store in airtable 'characters' table
+ * 
+ * @param {} props 
+ * 
+ * 
+ */
+
 function SaveButton(props) {
-  const status = props.status;
-  // const status = '';
+  const { status, data } = props;
+  console.log(data);
 
 
   return (
     <div>
     {
-      (props.status === 'disabled') 
+      (status === 'disabled') 
       ? <input type="submit" disabled value="Save Character" /> 
       : <input type="submit" value="Save Character" />  
     }

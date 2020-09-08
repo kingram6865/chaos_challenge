@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 */
 function SavedCharacterData(props) {
   const data = props.data;
-  console.log(data);
+  // console.log(data);
   return (
     <div>
     { (!Object.is(data, undefined))  && 
