@@ -1,11 +1,14 @@
 import React from 'react';
 
-function Test (){
+function Test (props){
+  // console.log(props.data);
+
 
 return (
   <div>
-    {process.env.REACT_APP_AIRTABLE_BASE}<br />
-    {process.env.REACT_APP_AIRTABLE_KEY}
+    {
+     props.data  &&  props.data.id
+    }
   </div>
   )
 }

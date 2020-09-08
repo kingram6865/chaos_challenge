@@ -1,8 +1,19 @@
 import React from 'react';
 
-function SaveButton() {
+function SaveButton(props) {
+  const status = props.status;
+  // const status = '';
 
-  return <button>Save Character</button>
+
+  return (
+    <div>
+    {
+      (props.status === 'disabled') 
+      ? <input type="submit" disabled value="Save Character" /> 
+      : <input type="submit" value="Save Character" />  
+    }
+    </div>
+  )
 }
 
 export default SaveButton;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 /** 
@@ -7,27 +7,21 @@ import React from 'react';
 */
 function SavedCharacterData(props) {
   const data = props.data;
-  // console.log(props.data);
   console.log(data);
-
   return (
     <div>
-      {/**
-        Want to create a scrolling table here of maybe a few rows at a time
-        on the mobile presentation, but more on the tablet and desktop views
-      
-       */}
-      <ul>
-        {
-          data.map((item, idx) => (
-          <li key={idx}>{item.fields.playerName}</li>
-          ))
-        }
-      </ul>
-      {/* <div>Character Name</div>
-      <div>Character Stats</div>
-      <div>Character Bio</div>
-      <div>Character Image</div> */}
+    { (!Object.is(data, undefined))  && 
+     <div>
+      <div>Name: {data.fields.characterName}</div>
+      <div><span>Race: {data.fields.raceName}</span> <span>Class: {data.fields.className}</span></div>
+      <div><span>Strength: {data.fields.strength} </span><span>Dexterity: {data.fields.dexterity} </span><span>Constitution: {data.fields.constitution} </span>
+      <span>Intelligence: {data.fields.intelligence} </span><span>Wisdom: {data.fields.wisdom} </span>
+
+      </div>
+      <div>Bio</div>
+      <div>Image</div>
+    </div>
+    }
     </div>
   )
 }

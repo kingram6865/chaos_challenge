@@ -1,32 +1,40 @@
 import React, { useState, useEffect } from 'react';
+// import React, { useState } from 'react';
 import axios from 'axios';
 import SavedCharacterData from './SavedCharacterData';
 
-/* Show details about a character when selected from CharacterList */ 
+/* Show details about a specifc character when selected from CharacterList */ 
 
 function CharacterDisplay(props) {
-  const [charData, setCharData] = useState([]);
+  const { selectedCharacter } = props;
+  const [charData, setCharData] = useState({});
 
-  async function retrieveCharacters(){
+  // console.log(`[CharacterDisplay] ${JSON.stringify(selectedCharacter)}`);
+
+  async function retrieveCharacter(){
+    // const url = `${process.env.REACT_APP_AIRTABLE_BASE}/${input.id}`;
     const url = `${process.env.REACT_APP_AIRTABLE_BASE}`;
     const response = await axios.get(url, {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
       }
     });
-    // console.log(response.data.records);
+    // console.log(`[CharacterDisplay] ${JSON.stringify(response.data)}`);
     setCharData(response.data.records);
-    // setCharData([`${process.env.REACT_APP_AIRTABLE_KEY}, ${process.env.REACT_APP_AIRTABLE_BASE}`]);
   }
-  
+
   useEffect(() => {
-    retrieveCharacters();
+    setCharData(selectedCharacter);
+  }, []);  
+
+  useEffect(() => {
+    retrieveCharacter();
   }, []);
 
   return (
     <div>
       <h3>Character Info</h3>
-      <SavedCharacterData data={charData}/>
+      selectedCharacter && <SavedCharacterData data={selectedCharacter}/>
     </div>
   )
 }

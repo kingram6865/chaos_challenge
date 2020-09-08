@@ -2,7 +2,11 @@ import React from 'react';
 
 function GeneratorButton() {
 
-  return <button>Generate Character</button>
+  return (
+    <div>
+    <button>Generate Character</button>
+    </div>
+  )
 }
 
 export default GeneratorButton;
