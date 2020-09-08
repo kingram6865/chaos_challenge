@@ -10,11 +10,22 @@ import { generateAttribute, generateRace, generateClass } from '../services';
  */
 
 function GeneratorButton(props) {
+  console.log(props);
+
+  function createCharacterStats(){
+
+  }
+
+
   // console.log(props);
+  // console.log(`[GeneratorButton]  ${generateAttribute()}`);
+  // console.log(`[GeneratorButton]  ${generateRace()}`);
+  // console.log(`[GeneratorButton]  ${generateClass()}`);
+
 
   return (
     <div>
-    <button>Generate Character</button>
+    <button onClick={() => createCharacterStats()}>Generate Character</button>
     </div>
   )
 }
