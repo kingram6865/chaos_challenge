@@ -9,7 +9,6 @@ function getDieRoll(max){
  */
 
 export function generateAttribute(){
-  // var result = getDieRoll(6) + getDieRoll(6) + getDieRoll(6);
   let result = 0;
   for (let i=1; i<=3; i++){
     let thisResult = getDieRoll(6) + getDieRoll(6) + getDieRoll(6);

@@ -10,10 +10,24 @@ import { generateAttribute, generateRace, generateClass } from '../services';
  */
 
 function GeneratorButton(props) {
+  let { characterStats, setCharacterStats } = props;
+  const keys = Object.keys(characterStats); 
   console.log(props);
 
   function createCharacterStats(){
+    let index = keys.length - 2;
+    let newCharStats = {...characterStats};
+    for (let i=0; i < index; i++){
+      if ((keys[i] !== 'characterName') || (keys[i] !== 'playerName')){
+        setCharacterStats({...newCharStats, [keys[i]]: generateAttribute()});
+      }
+    }
 
+    setCharacterStats({...newCharStats, 'characterClass': generateClass()});
+    setCharacterStats({...newCharStats, 'characterRace': generateRace()});
+
+    // setCharacterStats(characterStats);
+    console.log(characterStats);
   }
 
 
@@ -25,7 +39,7 @@ function GeneratorButton(props) {
 
   return (
     <div>
-    <button onClick={() => createCharacterStats()}>Generate Character</button>
+      <button onClick={() => createCharacterStats()}>Generate Character</button>
     </div>
   )
 }
