@@ -10,7 +10,7 @@ import React from 'react';
 
 function SaveButton(props) {
   const { status, data } = props;
-  console.log(data);
+  // console.log(data);
 
 
   return (

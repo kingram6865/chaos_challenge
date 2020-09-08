@@ -12,7 +12,7 @@ import { generateAttribute, generateRace, generateClass } from '../services';
 function GeneratorButton(props) {
   let { characterStats, setCharacterStats } = props;
   const keys = Object.keys(characterStats); 
-  console.log(props);
+  // console.log(props);
 
   function createCharacterStats(){
     let index = keys.length - 2;
@@ -27,7 +27,7 @@ function GeneratorButton(props) {
     setCharacterStats({...newCharStats, 'characterRace': generateRace()});
 
     // setCharacterStats(characterStats);
-    console.log(characterStats);
+    // console.log(characterStats);
   }
 
 

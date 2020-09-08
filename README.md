@@ -22,8 +22,9 @@ This was a humorous take on character creation, as often players spend hours cra
 
 ## 4. Component Hierarchy
 Main Container (App)
- - Input Form (Player Name, Character Name, character stats)
- - Input fields => Input specific individual stat
+|
+| --- Input Form (Player Name, Character Name, character stats)
+     |- Input fields => Input specific individual stat
    - Button => Randomly generate individual stat value
    - Button => Randomly generate all stats at once
  - Result Display (Show the details for the character generated)
