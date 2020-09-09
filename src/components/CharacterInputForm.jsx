@@ -43,15 +43,19 @@ function CharacterInputForm() {
   const [characterClass, setCharacterClass] = useState(0);
   const [characterRace, setCharacterRace] = useState(0);
 
+  console.log(characterStats)
+
   function handleData(info, target){
     setSaveState((saveState === 'disabled') ? setSaveState('') : saveState);
     // console.log(target, info, newState);
     setCharacterStats({...characterStats, [target]: info});
   }
 
+
+
   useEffect(() =>{
     // alert("Rendering");
-  }, []);
+  }, [characterStats]);
  
 
   return (

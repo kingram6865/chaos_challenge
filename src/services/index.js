@@ -14,7 +14,7 @@ export function generateAttribute(){
     let thisResult = getDieRoll(6) + getDieRoll(6) + getDieRoll(6);
     result = (thisResult > result) ? thisResult : result;
   }
-
+  // console.log(result);
   return result;
 }
 

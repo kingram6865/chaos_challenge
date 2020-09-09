@@ -1,5 +1,5 @@
 import React from 'react';
-import { generateAttribute, generateRace, generateClass } from '../services';
+import { generateAttribute, generateRace, generateClass } from '../services/index';
 
 /**
  * Generate a complete character randomly.
@@ -16,20 +16,37 @@ function GeneratorButton(props) {
 
   function createCharacterStats(){
     let index = keys.length - 2;
-    let newCharStats = {...characterStats};
-    for (let i=0; i < index; i++){
-      if ((keys[i] !== 'characterName') || (keys[i] !== 'playerName')){
-        setCharacterStats({...newCharStats, [keys[i]]: generateAttribute()});
-      }
-    }
+    // let newCharStats = { ...characterStats };
+    console.log(keys);
+    // console.log(newCharStats);
+    // for (let i=0; i < index; i++){
+      
+      // if ((keys[i] !== 'characterName') || (keys[i] !== 'playerName')){
+      //   // console.log(generateAttribute());
+      //   console.log(keys[i]);
+      //   setCharacterStats({...characterStats, [keys[i]]: generateAttribute()});
+      //   // console.log(`${JSON.stringify(newCharStats)}`);
+      // }
+    // }
+    
+    setCharacterStats({...characterStats, 
+      'strength': generateAttribute(),
+      'dexterity': generateAttribute(),
+      'constitution': generateAttribute(),
+      'intelligence': generateAttribute(),
+      'wisdom': generateAttribute(),
+      'charisma': generateAttribute(),
+      'characterClass': generateClass(),
+      'characterRace': generateRace()
+    });
 
-    setCharacterStats({...newCharStats, 'characterClass': generateClass()});
-    setCharacterStats({...newCharStats, 'characterRace': generateRace()});
 
-    // setCharacterStats(characterStats);
-    // console.log(characterStats);
+    // setCharacterStats({...characterStats, 'characterClass': generateClass()});
+    // setCharacterStats({...characterStats, 'characterRace': generateRace()});
+    
+    
   }
-
+  console.log(characterStats);
 
   // console.log(props);
   // console.log(`[GeneratorButton]  ${generateAttribute()}`);
@@ -38,9 +55,11 @@ function GeneratorButton(props) {
 
 
   return (
+
     <div>
       <button onClick={() => createCharacterStats()}>Generate Character</button>
     </div>
+
   )
 }
 

@@ -11,14 +11,14 @@ import React from 'react';
 function SaveButton(props) {
   const { status, data } = props;
   // console.log(data);
-
+  
 
   return (
     <div>
     {
       (status === 'disabled') 
-      ? <input type="submit" disabled value="Save Character" /> 
-      : <input type="submit" value="Save Character" />  
+      ? <button disabled>Save Character</button>
+      : <button >Save Character</button>
     }
     </div>
   )
