@@ -1,9 +1,16 @@
 import React from 'react';
 import { generateAttribute, generateRace, generateClass } from '../services';
 
+
+/**
+ * Button component to simulate Die rolls: 3D6 for Attributes, 
+ * 1D8 for Race and 1D12 for Class.
+ * Generator functions declared and coded in src/services/index.js
+ * 
+ * @param {*} props 
+ */
 function StatsButton(props) {
   const { stat, setCharacterStats, characterStats } = props;
-  // console.log(props);
 
   function generateStat(){
     if (stat==='characterClass'){

@@ -4,7 +4,6 @@ import { generateAttribute, generateRace, generateClass } from '../services/inde
 /**
  * Generate a complete character randomly.
  * 
- * 
  * @param {*} props 
  * 
  */
@@ -25,7 +24,6 @@ function GeneratorButton(props) {
     });
     
   }
-  // console.log(characterStats);
 
   return (
 
