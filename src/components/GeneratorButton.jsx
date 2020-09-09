@@ -25,7 +25,7 @@ function GeneratorButton(props) {
     });
     
   }
-  console.log(characterStats);
+  // console.log(characterStats);
 
   return (
 
