@@ -9,17 +9,17 @@ function CharacterDisplay(props) {
   const { selectedCharacter } = props;
   const [charData, setCharData] = useState({});
   // console.log(charData);
-  // console.log(`[CharacterDisplay] ${JSON.stringify(selectedCharacter)}`);
 
   async function retrieveCharacter(){
     // const url = `${process.env.REACT_APP_AIRTABLE_BASE}/${input.id}`;
+    // const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/characters`;
     const url = `${process.env.REACT_APP_AIRTABLE_BASE}`;
     const response = await axios.get(url, {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
       }
     });
-    // console.log(`[CharacterDisplay] ${JSON.stringify(response.data)}`);
+
     setCharData(response.data.records);
   }
 
@@ -34,7 +34,7 @@ function CharacterDisplay(props) {
   return (
     <div>
       <h3>Character Info</h3>
-      selectedCharacter && <SavedCharacterData data={selectedCharacter}/>
+      selectedCharacter && <SavedCharacterData data={selectedCharacter} charData={charData} setCharData={setCharData} />
     </div>
   )
 }

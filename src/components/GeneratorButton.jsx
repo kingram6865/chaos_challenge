@@ -11,24 +11,8 @@ import { generateAttribute, generateRace, generateClass } from '../services/inde
 
 function GeneratorButton(props) {
   let { characterStats, setCharacterStats } = props;
-  const keys = Object.keys(characterStats); 
-  // console.log(props);
 
   function createCharacterStats(){
-    let index = keys.length - 2;
-    // let newCharStats = { ...characterStats };
-    console.log(keys);
-    // console.log(newCharStats);
-    // for (let i=0; i < index; i++){
-      
-      // if ((keys[i] !== 'characterName') || (keys[i] !== 'playerName')){
-      //   // console.log(generateAttribute());
-      //   console.log(keys[i]);
-      //   setCharacterStats({...characterStats, [keys[i]]: generateAttribute()});
-      //   // console.log(`${JSON.stringify(newCharStats)}`);
-      // }
-    // }
-    
     setCharacterStats({...characterStats, 
       'strength': generateAttribute(),
       'dexterity': generateAttribute(),
@@ -39,25 +23,14 @@ function GeneratorButton(props) {
       'characterClass': generateClass(),
       'characterRace': generateRace()
     });
-
-
-    // setCharacterStats({...characterStats, 'characterClass': generateClass()});
-    // setCharacterStats({...characterStats, 'characterRace': generateRace()});
-    
     
   }
   console.log(characterStats);
 
-  // console.log(props);
-  // console.log(`[GeneratorButton]  ${generateAttribute()}`);
-  // console.log(`[GeneratorButton]  ${generateRace()}`);
-  // console.log(`[GeneratorButton]  ${generateClass()}`);
-
-
   return (
 
     <div>
-      <button onClick={() => createCharacterStats()}>Generate Character</button>
+      <button onClick={() => createCharacterStats()}>Generate All Stats</button>
     </div>
 
   )

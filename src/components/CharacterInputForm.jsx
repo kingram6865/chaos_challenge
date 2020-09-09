@@ -43,7 +43,7 @@ function CharacterInputForm() {
   const [characterClass, setCharacterClass] = useState(0);
   const [characterRace, setCharacterRace] = useState(0);
 
-  console.log(characterStats)
+  // console.log(characterStats)
 
   function handleData(info, target){
     setSaveState((saveState === 'disabled') ? setSaveState('') : saveState);
