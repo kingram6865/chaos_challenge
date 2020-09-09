@@ -12,12 +12,15 @@ function CharacterDisplay(props) {
 
   async function retrieveCharacter(){
     // const url = `${process.env.REACT_APP_AIRTABLE_BASE}/${input.id}`;
-    // const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/characters`;
-    const url = `${process.env.REACT_APP_AIRTABLE_BASE}`;
+    // const urlCheck = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/characters`;
+    // console.log(urlCheck);
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/characters`;
+    console.log(`[retrieveCharacter] ${url}`);
+    // const url = `${process.env.REACT_APP_AIRTABLE_BASE}`;
     const response = await axios.get(url, {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
-      }
+      },
     });
 
     setCharData(response.data.records);
