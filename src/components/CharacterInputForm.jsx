@@ -40,8 +40,8 @@ function CharacterInputForm() {
     characterClass: 0,
     characterRace: 0
   });
-  const [characterClass, setCharacterClass] = useState(0);
-  const [characterRace, setCharacterRace] = useState(0);
+  // const [characterClass, setCharacterClass] = useState(0);
+  // const [characterRace, setCharacterRace] = useState(0);
 
   // console.log(characterStats)
 
@@ -51,9 +51,8 @@ function CharacterInputForm() {
     setCharacterStats({...characterStats, [target]: info});
   }
 
-
-
   useEffect(() =>{
+
     // alert("Rendering");
   }, [characterStats]);
  
@@ -95,17 +94,17 @@ function CharacterInputForm() {
         </span><br />
         <span>
           <label htmlFor="characterRace">Race: </label>
-          <input name="characterRace" type="number" placeholder="Race" defaultValue={characterRace} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-          <StatsButton name="Roll Race" stat="characterRace" setCharacterRace={setCharacterRace}/>
+          <input name="characterRace" type="number" placeholder="Race" defaultValue={characterStats.characterRace} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
+          <StatsButton name="Roll Race" stat="characterRace" characterStats={characterStats} setCharacterStats={setCharacterStats}/>
         </span><br />
         <span>
           <label htmlFor="class">Class: </label>
-          <input name="characterClass" type="number" placeholder="Class" defaultValue={characterClass} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-          <StatsButton name="Roll Class" stat="characterClass" setCharacterClass={setCharacterClass}/>
+          <input name="characterClass" type="number" placeholder="Class" defaultValue={characterStats.characterClass} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
+          <StatsButton name="Roll Class" stat="characterClass" characterStats={characterStats} setCharacterStats={setCharacterStats}/>
         </span><br />
         <Buttons>
           <GeneratorButton setCharacterStats={setCharacterStats} characterStats={characterStats} />  
-          <SaveButton status={saveState} data={{...characterStats, class: characterClass, race: characterRace}}/>
+          <SaveButton status={saveState} data={characterStats}/>
         </Buttons>
       </InputStyle>
     </div>

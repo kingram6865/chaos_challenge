@@ -7,15 +7,19 @@ function StatsButton(props) {
 
   function generateStat(){
     if (stat==='characterClass'){
-      setCharacterStats({ ...characterStats, chracterRace: generateClass() });
+      setCharacterStats({ ...characterStats, 'characterClass': generateClass() });
     } else if (stat==='characterRace'){
-      setCharacterStats({ ...characterStats, chracterRace: generateRace() });
+      setCharacterStats({ ...characterStats, 'characterRace': generateRace() });
     } else {
       setCharacterStats({ ...characterStats, [stat]: generateAttribute() });
     }
   }
 
-  return <button onClick={()=> generateStat()}>{props.name}</button>
+  return (
+    <button 
+      onClick={()=> generateStat()}
+    >{props.name}</button>
+  )
 }
 
 export default StatsButton;

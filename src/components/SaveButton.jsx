@@ -9,8 +9,7 @@ import React from 'react';
  */
 
 function SaveButton(props) {
-  const { status } = props;
-  // console.log(data);
+  const { status, data } = props;
   
 
   return (
@@ -18,7 +17,11 @@ function SaveButton(props) {
     {
       (status === 'disabled') 
       ? <button disabled>Save Character</button>
-      : <button >Save Character</button>
+      : <button 
+          onClick={
+            () => console.log(data)
+          }
+        >Save Character</button>
     }
     </div>
   )

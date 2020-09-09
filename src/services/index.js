@@ -2,6 +2,8 @@ function getDieRoll(max){
 	return Math.floor(Math.random() * Math.floor(max)) + 1;
 }
 
+// export const baseURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}`;
+
 /**
  *  Best of 3 rule.
  *  Roll 3D6, 3 times, best set is the attribute

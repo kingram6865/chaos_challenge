@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-// import React, { useState } from 'react';
-import axios from 'axios';
+// import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+// import axios from 'axios';
 import SavedCharacterData from './SavedCharacterData';
+// import { baseURL } from '../services/';
 
 /* Show details about a specifc character when selected from CharacterList */ 
 
@@ -10,29 +11,29 @@ function CharacterDisplay(props) {
   const [charData, setCharData] = useState({});
   // console.log(charData);
 
-  async function retrieveCharacter(){
-    // const url = `${process.env.REACT_APP_AIRTABLE_BASE}/${input.id}`;
-    // const urlCheck = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/characters`;
-    // console.log(urlCheck);
-    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/characters`;
-    console.log(`[retrieveCharacter] ${url}`);
-    // const url = `${process.env.REACT_APP_AIRTABLE_BASE}`;
-    const response = await axios.get(url, {
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
-      },
-    });
+  // async function retrieveCharacter(){
+  //   const properURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/characters`;
+  //   // const url = `${baseURL}/characters`;
+  //   const url = `${process.env.REACT_APP_AIRTABLE_BASE}`;
+  //   console.log(`[retrieveCharacter] ${url}`);
+  //   console.log(`[retrieveCharacter] ${properURL}`);
 
-    setCharData(response.data.records);
-  }
+  //   const response = await axios.get(url, {
+  //     headers: {
+  //       'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
+  //     },
+  //   });
 
-  useEffect(() => {
-    setCharData(selectedCharacter);
-  }, [selectedCharacter]);  
+  //   setCharData(response.data.records);
+  // }
 
-  useEffect(() => {
-    retrieveCharacter();
-  }, []);
+  // useEffect(() => {
+  //   setCharData(selectedCharacter);
+  // }, [selectedCharacter]);  
+
+  // useEffect(() => {
+  //   retrieveCharacter();
+  // }, []);
 
   return (
     <div>
