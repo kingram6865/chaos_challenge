@@ -1,5 +1,5 @@
-// import React, { useState, useEffect } from 'react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+// import React from 'react';
 // import axios from 'axios';
 import styled from 'styled-components';
 
@@ -17,9 +17,9 @@ const AttributeSpan = styled.span`
 `
 
 function CharacterList(props) {
-  // const [charData, setCharData] = useState([]);
-  const charData = props.data;
-
+  const [charData, setCharData] = useState([]);
+  // const charData = props.data;
+  
   // async function retrieveCharacters(){
   //   const url = `${process.env.REACT_APP_AIRTABLE_BASE}`;
   //   const response = await axios.get(url, {
@@ -31,9 +31,10 @@ function CharacterList(props) {
   //   setCharData(response.data.records);
   // }
   
-  // useEffect(() => {
-  //   retrieveCharacters();
-  // }, []);    
+  useEffect(() => {
+    // retrieveCharacters();
+    setCharData(props.data);
+  }, [props.data]);    
 
   return (
     <div>
@@ -46,6 +47,13 @@ function CharacterList(props) {
       <TableStyle>
       <table>
         <tbody>
+          <tr>
+            <th>Player Name</th>
+            <th>Character Name</th>
+            <th>Stats</th>
+            <th>Class</th>
+            <th>Race</th>
+          </tr>
         {
           charData.map((item, idx) => (
           <tr 
@@ -54,12 +62,19 @@ function CharacterList(props) {
               <td>{item.fields.playerName}</td>
               <td>{item.fields.characterName}</td>
               <td>
-                {`{`}<AttributeSpan className="str">{`str: ${item.fields.strength},`}</AttributeSpan> 
-                {`dex: ${item.fields.dexterity},`} 
-                {`con: ${item.fields.constitution}, 
-              int: ${item.fields.intelligence}, wis: ${item.fields.wisdom}, cha: ${item.fields.charisma}
-                }, `}
-                <ClassSpan style= {{backgroundColor: `#${item.fields.classColor}` }}>{`class: ${item.fields.className}, `}</ClassSpan>{`race: ${item.fields.raceName}}`}
+                {`{`}
+                <AttributeSpan className="str">{`str: ${item.fields.strength},`}</AttributeSpan> 
+                <AttributeSpan className="dex">{`dex: ${item.fields.dexterity},`}</AttributeSpan>
+                <AttributeSpan className="con">{`con: ${item.fields.constitution},`}</AttributeSpan>
+                <AttributeSpan className="int">{`int: ${item.fields.intelligence},`}</AttributeSpan>
+                <AttributeSpan className="wis">{`wis: ${item.fields.wisdom},`}</AttributeSpan>
+                <AttributeSpan className="cha">{`cha: ${item.fields.charisma}, `}</AttributeSpan>
+              </td>
+              <td>
+              <ClassSpan style= {{backgroundColor: `#${item.fields.classColor}` }}>{`${item.fields.className}, `}</ClassSpan>
+              </td>
+              <td>
+              {`${item.fields.raceName}`}
               </td>
           </tr>
           ))
