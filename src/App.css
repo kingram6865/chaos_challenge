@@ -2,11 +2,46 @@
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-title {
+  
 }
+
+/*  
+  Character Input Styling
+*/
+.data-instructions {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  width: 40%;
+  margin: 0;
+}
+
+.data-id {
+  
+}
+
+.attributes {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.data-physical {
+  justify-content: flex-start;
+}
+
+.data-mental {
+
+}
+
+.data-intrinsic {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+
+
+
 
 .App-header {
   background-color: #282c34;
@@ -24,37 +59,56 @@ input[type=number]{
 }
 
 .str {
-  background-color: red;
-  color: white;
+  color: red;
   font-weight: bold;
 }
 
 .dex {
-  background-color: yellow;
-  color: black;
+  color: green;
   font-weight: bold;  
 }
 
 .con {
-background-color: orange;
-  color: white;
+  color: orange;
   font-weight: bold;
 }
 
 .int {
-background-color: blue;
-  color: white;
+  color: blue;
   font-weight: bold;
 }
 
 .wis {
-background-color: green;
-  color: white;
+  color: grey;
   font-weight: bold;
 }
 
 .cha {
-background-color: purple;
-  color: white;
+  color: purple;
   font-weight: bold;
+}
+
+/* 1em === 16px */
+@media only screen and (min-width:320px)  { 
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+}
+
+@media only screen and (min-width:480px)  { 
+  /* smartphones, Android phones, landscape iPhone */ 
+}
+
+@media only screen and (min-width:600px)  { 
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+}
+
+@media only screen and (min-width:801px)  { 
+  /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+}
+
+@media only screen and (min-width:1025px) { 
+  /* big landscape tablets, laptops, and desktops */ 
+}
+
+@media only screen and (min-width:1281px) { 
+  /* hi-res laptops and desktops */ 
 }
