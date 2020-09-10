@@ -5,6 +5,8 @@ import StatsButton from './StatsButton'
 import GeneratorButton from './GeneratorButton';
 import SaveButton from './SaveButton';
 
+import './CharacterInputForm.css';
+
 /**
  *  CSS-in-JS
  * 
@@ -26,7 +28,8 @@ const Buttons = styled.div`
  */
 
 
-function CharacterInputForm() {
+function CharacterInputForm(props) {
+  const { classData, raceData } = props;
   const [saveState, setSaveState] = useState('disabled');
   const [characterStats, setCharacterStats] = useState({
     playerName: '',
@@ -47,7 +50,7 @@ function CharacterInputForm() {
   }
 
   useEffect(() =>{
-    console.log(characterStats);
+    // console.log(characterStats);
     // alert("Rendering");
   }, [characterStats]);
  
@@ -104,7 +107,10 @@ function CharacterInputForm() {
         </span><br />
         <Buttons>
           <GeneratorButton setCharacterStats={setCharacterStats} characterStats={characterStats} />  
-          <SaveButton status={saveState} data={characterStats}/>
+          <SaveButton status={saveState} data={characterStats} 
+            classData={classData}
+            raceData={raceData}          
+          />
         </Buttons>
       </InputStyle>
     </div>
