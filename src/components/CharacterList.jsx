@@ -57,6 +57,7 @@ function CharacterList(props) {
         {
           charData.map((item, idx) => (
           <tr 
+            onClick={(e)=>console.log(e)}
             data-id={item.id}  
             key={idx}>
               <td>{item.fields.playerName}</td>

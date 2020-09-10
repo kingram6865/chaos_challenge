@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+/**
+ * Component for Testing issues during development
+ * 
+ */
+
 function Test (props){
   const [classData, setClassData] = useState([]);
   const [raceData, setRaceData] = useState([]);

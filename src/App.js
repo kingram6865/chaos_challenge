@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Test from './components/Test';
 import CharacterList from './components/CharacterList';
 import CharacterDisplay from './components/CharacterDisplay';
 import CharacterInputForm from './components/CharacterInputForm';
@@ -50,20 +49,14 @@ function App() {
     setRaceData(finalData);
   }
 
-
-
-
   useEffect(() => {
     retrieveAllCharacters();
     classesID();
     racesID();
   }, []);
 
-  // console.log(allCharacters[0]);
-
   return (
     <div className="App">
-      {/* <Test data={allCharacters[0]} /> */}
       <h1>D&amp;D Chaos Challenge Character Generator</h1>
       <CharacterInputForm  
         classData={classData}
@@ -72,7 +65,6 @@ function App() {
       <CharacterList data={allCharacters} setSelectedCharacter={setSelectedCharacter} selectedCharacter={selectedCharacter}/>
       {/* <CharacterDisplay selectedCharacter={selectedCharacter}/> */}
       <CharacterDisplay selectedCharacter={allCharacters[0]}/>
-      <Test />
     </div>
   );
 }
