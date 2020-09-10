@@ -1,6 +1,6 @@
 import React from 'react';
 import { generateAttribute, generateRace, generateClass } from '../services';
-
+import './StatsButton.css';
 
 /**
  * Button component to simulate Die rolls: 3D6 for Attributes, 

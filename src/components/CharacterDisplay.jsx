@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
 import SavedCharacterData from './SavedCharacterData';
+import './CharacterDisplay.css';
 // import { baseURL } from '../services/';
 
 /* Show details about a specifc character when selected from CharacterList */ 
@@ -37,7 +38,7 @@ function CharacterDisplay(props) {
 
   return (
     <div>
-      <h3>Character Info</h3>
+      <div className="component-title">Character Info</div>
       {selectedCharacter && <SavedCharacterData data={selectedCharacter} charData={charData} setCharData={setCharData} />}
     </div>
   )

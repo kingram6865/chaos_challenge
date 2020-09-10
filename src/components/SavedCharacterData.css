@@ -1,0 +1,22 @@
+.saved-character-info {
+  border: 2px solid #80B918;
+  border-radius: 25px;
+}
+
+label {
+  font-style: italic;
+}
+
+.info-label {
+  color: #007F5F;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.attrib-value {
+  background-color: #2B9348;
+  color: #BFD200;
+  padding: 0 2px;
+  font-weight: bold;
+  margin: 4px 0;
+}

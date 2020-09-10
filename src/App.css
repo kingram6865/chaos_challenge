@@ -1,9 +1,34 @@
 .App {
+  /* background-color: #AACC00; */
   text-align: center;
 }
 
 .app-title {
   font-size: 20px;
+  font-weight: bold;
+  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
+  color: #007F5F;
+}
+
+.component-title {
+  border-radius: 25px;
+  background-color: #BFD200;
+  font-size: 18px;
+  font-weight: bold;
+  color: #007F5F;
+  width: 33%;
+  align: center;
+}
+
+
+nav a {
+  background-color: #007F5F;
+  color: #DDDF00;
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 0 5px 2px 5px;
+  border-radius: 10px;
   font-weight: bold;
 }
 
@@ -113,3 +138,34 @@ input[type=number]{
 @media only screen and (min-width:1281px) { 
   /* hi-res laptops and desktops */ 
 }
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #BFD200; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: 0 #2B9348; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #EEEF20; 
+}
+
+/* Color Palette
+
+--spanish-viridian: #007f5fff;
+--spanish-green: #2b9348ff;
+--green-ryb: #55a630ff;
+--apple-green: #80b918ff;
+--android-green: #aacc00ff;
+--bitter-lemon: #bfd200ff;
+--pear: #d4d700ff;
+--titanium-yellow: #dddf00ff;
+--xanthic: #eeef20ff;
+--maximum-yellow: #ffff3fff; */
