@@ -34,8 +34,8 @@ function SaveButton(props) {
     // console.log(classData.find((roll, index, arr) => {Object.keys(arr[index])  }));
     // console.log(classData.find((item, index) =>  console.log(index, item.roll)  ));
 
-    console.log(classID(data.characterClass).id);
-    console.log(raceID(data.characterRace).id);
+    // console.log(classID(data.characterClass).id);
+    // console.log(raceID(data.characterRace).id);
 
     const fields = {
       playerName: data.playerName,
@@ -55,7 +55,7 @@ function SaveButton(props) {
     }
     // characterClass: data.characterClass,
     // characterRace: data.characterRace
-    // console.log(fields);
+    console.log(fields);
     await axios.post(url, { fields },
       {
        headers: {

@@ -27,6 +27,7 @@ function App() {
 
   async function classesID(){
     const url = process.env.REACT_APP_BASE_URL + process.env.REACT_APP_AIRTABLE_BASE + "/classes";
+    console.log("[App.js =>classesID()]",url);
     const response = await axios.get(url, {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
@@ -39,6 +40,7 @@ function App() {
 
   async function racesID(){
     const url = process.env.REACT_APP_BASE_URL + process.env.REACT_APP_AIRTABLE_BASE + "/races";
+    console.log("[App.js =>racesID()]", url);
     const response = await axios.get(url, {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
