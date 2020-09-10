@@ -98,6 +98,7 @@ Minimum features:
 
 ## 7. Post-MVP
 
+ - Show character Info when character selected on list
  - Character Inventory Table
  - Randomly select inventory
  - Button => Randomly generate character names
