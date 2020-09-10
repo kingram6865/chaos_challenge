@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import CharacterList from './components/CharacterList';
@@ -91,13 +92,23 @@ function App() {
   return (
     <div className="App">
       <div className="app-title">D&amp;D Chaos Challenge Character Generator</div>
-      <CharacterInputForm  
-        classData={classData}
-        raceData={raceData}
-      />
-      <CharacterList data={allCharacters} setSelectedCharacter={setSelectedCharacter} selectedCharacter={selectedCharacter}/>
-      {/* <CharacterDisplay selectedCharacter={selectedCharacter}/> */}
-      <CharacterDisplay selectedCharacter={allCharacters[0]}/>
+      <nav>
+      <Link to="/">Create a Character</Link>
+        <Link to="/display">Saved Characters</Link>
+      </nav>
+      <Switch>
+        <Route exact path="/">
+          <CharacterInputForm  
+            classData={classData}
+            raceData={raceData}
+          />
+        </Route>
+        <Route path="/display">
+          <CharacterList data={allCharacters} setSelectedCharacter={setSelectedCharacter} selectedCharacter={selectedCharacter}/>
+          {/* <CharacterDisplay selectedCharacter={selectedCharacter}/> */}
+          <CharacterDisplay selectedCharacter={allCharacters[0]}/>
+        </Route>
+      </Switch>
     </div>
   );
 }

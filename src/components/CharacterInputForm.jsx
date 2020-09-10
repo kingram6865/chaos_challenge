@@ -53,12 +53,10 @@ function CharacterInputForm(props) {
     // alert("Rendering");
   }, [characterStats]);
 
-  
-
   return (
     <div className="data-input">
       <div className="data-instructions">
-        <p>To activate [Save Character], enter a character name and a player name, then</p>
+        <p>To save stats, enter a character name and a player name, then</p>
         <ol>
           <li>enter each stat manually OR</li> 
           <li>randomly select individual stats OR</li>

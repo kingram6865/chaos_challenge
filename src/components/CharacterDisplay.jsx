@@ -38,7 +38,7 @@ function CharacterDisplay(props) {
   return (
     <div>
       <h3>Character Info</h3>
-      selectedCharacter && <SavedCharacterData data={selectedCharacter} charData={charData} setCharData={setCharData} />
+      {selectedCharacter && <SavedCharacterData data={selectedCharacter} charData={charData} setCharData={setCharData} />}
     </div>
   )
 }
