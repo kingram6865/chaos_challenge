@@ -111,7 +111,7 @@ input[type=number]{
 }
 
 /* 1em === 16px */
-@media only screen and (min-width:600px)  { 
+@media only screen and (min-width:590px)  { 
   .app-title {
     font-size: 24px;
     font-weight: bold;
