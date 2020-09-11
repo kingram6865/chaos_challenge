@@ -7,22 +7,77 @@ input {
   background-color: #AACC00;
 }
 
+/*  
+  Instructions
+*/
 .data-instructions {
-  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
 }
+ .data-instructions ol {
+   width: 275px;
+   text-align: left;
+   margin: 0 auto;
+ } 
 
 .data-id {
-  
+  padding: 5px 0;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
+.data-id span {
+  padding: 0;
+}
+
+label {
+  text-align: left;
+}
+
+input {
+  align: right;
+}
+
+
+.attributes {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+
 .data-physical {
-  
+  text-align: left;
 }
 
 .data-mental {
-
+  text-align: left;
 }
 
 .data-intrinsic {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+}
 
+@media only screen and (min-width:600px)  { 
+  .data-id {
+    padding: 5px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 auto;
+  }  
+
+  .attributes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width:320px)  { 
+  
 }

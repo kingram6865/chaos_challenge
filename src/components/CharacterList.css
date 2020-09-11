@@ -2,7 +2,25 @@
   margin: 10px 0;
 }
 
+.base .component-title {
+  width: 90%;
+}
+
 .data-character-list {
   border: 2px solid #80B918;
   border-radius: 25px;
+  font-size: 16px;
+}
+
+table {
+  /* white-space: nowrap; */
+  /* table-layout:fixed; */
+  width: 1000px;
+}
+.stats {
+  /* width: 310px; */
+}
+
+@media only screen and (min-width:1024px) { 
+  overflow-x: none;
 }

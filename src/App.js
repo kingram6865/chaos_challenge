@@ -13,7 +13,7 @@ function App() {
   const [selectedCharacter, setSelectedCharacter] = useState('');
   const [classData, setClassData] = useState([]);
   const [raceData, setRaceData] = useState([]);
-
+  const [saveResults, setSaveResults] = useState('--- Save Status ---');
 
   /**
    * Get all the current characters in the database and 
@@ -92,6 +92,9 @@ function App() {
   return (
     <div className="App">
       <div className="app-title">D&amp;D Chaos Challenge Character Generator</div>
+      <div className="mobile">Default Arrangement for Mobile</div>
+      <div className="tablet">Default Arrangement for Tablet</div>
+      <div className="desktop">Default Arrangement for Laptop/Desktop</div>
       <nav>
       <Link to="/">Create a Character</Link>
         <Link to="/display">Saved Characters</Link>
@@ -101,6 +104,8 @@ function App() {
           <CharacterInputForm  
             classData={classData}
             raceData={raceData}
+            saveResults={saveResults} 
+            setSaveResults={setSaveResults}
           />
         </Route>
         <Route path="/display">
@@ -109,6 +114,7 @@ function App() {
           <CharacterDisplay selectedCharacter={allCharacters[0]}/>
         </Route>
       </Switch>
+  <div className="saved-state">{saveResults}</div>
     </div>
   );
 }

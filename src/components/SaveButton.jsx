@@ -10,8 +10,8 @@ import axios from 'axios';
  */
 
 function SaveButton(props) {
-  const { status, data, classData, raceData } = props;
-
+  const { status, data, classData, raceData, setSaveResults } = props;
+  
   function classID(id){
     const info = classData.find(obj => {
       return obj.roll === id
@@ -28,16 +28,9 @@ function SaveButton(props) {
 
 
   async function saveRecord(e){
-    // axios.defaults.headers.common['Authorization'] = process.env.REACT_APP_AIRTABLE_KEY;
     const url = process.env.REACT_APP_BASE_URL + process.env.REACT_APP_AIRTABLE_BASE + "/characters";
-    // console.log("[SaveButton]: ",url)
-    // console.log(classData.find((roll, index, arr) => {Object.keys(arr[index])  }));
-    // console.log(classData.find((item, index) =>  console.log(index, item.roll)  ));
-
-    // console.log(classID(data.characterClass).id);
-    // console.log(raceID(data.characterRace).id);
-
     const fields = {
+      entryDate: new Date(),
       playerName: data.playerName,
       characterName: data.characterName,
       strength: data.strength,
@@ -53,10 +46,8 @@ function SaveButton(props) {
         raceID(data.characterRace).id
         ]
     }
-    // characterClass: data.characterClass,
-    // characterRace: data.characterRace
-    console.log(fields);
-    await axios.post(url, { fields },
+
+    const response = await axios.post(url, { fields },
       {
        headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
@@ -64,7 +55,8 @@ function SaveButton(props) {
        } 
       }      
     );
-
+    
+    setSaveResults(`Saved ${data.characterName} at ${response.data.createdTime}`);
   }
 
   return (

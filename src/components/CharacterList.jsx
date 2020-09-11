@@ -8,7 +8,8 @@ const TableStyle = styled.div`
   overflow-y: scroll;
   overflow-x: scroll;
   display: inline-block;
-  height: 200px;
+  height: 250px;
+  width: 95%;
 `
 const ClassSpan = styled.span`
   border-radius: 5px;
@@ -68,7 +69,7 @@ function CharacterList(props) {
             key={idx}>
               <td>{item.fields.playerName}</td>
               <td>{item.fields.characterName}</td>
-              <td>
+              <td className="stats">
                 {`{`}
                 <AttributeSpan className="str">{`str: ${item.fields.strength}, `}</AttributeSpan> 
                 <AttributeSpan className="dex">{`dex: ${item.fields.dexterity}, `}</AttributeSpan>

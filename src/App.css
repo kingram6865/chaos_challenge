@@ -4,23 +4,35 @@
 }
 
 .app-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   padding: 0 0 10px 0;
   margin: 0 0 10px 0;
   color: #007F5F;
 }
 
+.mobile {
+  border: 2px solid #007F5F;
+  border-radius: 20px;
+}
+
+.tablet {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
 .component-title {
   border-radius: 25px;
   background-color: #BFD200;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: #007F5F;
   width: 33%;
   align: center;
 }
-
 
 nav a {
   background-color: #007F5F;
@@ -32,43 +44,6 @@ nav a {
   font-weight: bold;
 }
 
-/*  
-  Character Input Styling
-*/
-.data-instructions {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-end;
-  width: 40%;
-  margin: 0;
-}
-
-.data-id {
-  
-}
-
-.attributes {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.data-physical {
-  justify-content: flex-start;
-}
-
-.data-mental {
-
-}
-
-.data-intrinsic {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-
-
-
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -78,6 +53,16 @@ nav a {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.saved-state {
+  margin: 1em 0;
+  background-color: #DDFF00;
+  color: #007F5F;
+}
+
+nav {
+  margin: 5px 0 5px 0;
 }
 
 input[type=number]{
@@ -115,28 +100,59 @@ input[type=number]{
 }
 
 /* 1em === 16px */
-@media only screen and (min-width:320px)  { 
-  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
-}
-
-@media only screen and (min-width:480px)  { 
-  /* smartphones, Android phones, landscape iPhone */ 
-}
-
 @media only screen and (min-width:600px)  { 
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
-}
+  .app-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+    color: #007F5F;
+  }
 
-@media only screen and (min-width:801px)  { 
+  .saved-state {
+    margin: 1em 0;
+    background-color: #DDFF00;
+    color: #007F5F;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .tablet {
+    border: 2px dashed #007F5F;
+    border-radius: 20px;
+    display: block;
+    margin: 0 0 1em 0;
+    padding: 5px  
+  }
+
+  .desktop {
+    display: none;
+  }
+
   /* tablet, landscape iPad, lo-res laptops ands desktops */ 
 }
 
-@media only screen and (min-width:1025px) { 
+@media only screen and (min-width:1075px) { 
   /* big landscape tablets, laptops, and desktops */ 
-}
+  .mobile {
+    display: none;
+  }
 
-@media only screen and (min-width:1281px) { 
-  /* hi-res laptops and desktops */ 
+  .tablet {
+    display: none;
+  }
+
+  .desktop {
+    border: 2px dashed #00755f;
+    border-radius: 20px;
+    display: block;
+    padding: 0 0 10px 0;
+  }
+
 }
 
 ::-webkit-scrollbar {
