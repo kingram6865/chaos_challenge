@@ -64,7 +64,12 @@ nav a {
 }
 
 .chaos-image {
-  background: url("/images/bluewhitedice.jpg");
+  height: 200px;
+  width: auto ;
+  background-image: url("./images/bluewhitedice_400.png");
+  background-position: center;
+  background-size: cover;
+  align: center;
 }
 
 nav {
@@ -140,7 +145,14 @@ input[type=number]{
   }
 
   .chaos-image {
+    /* height: 400px;
+    width: auto ;     */
+    max-width: 100%;
+    max-height: 100%;
     background-image: url("./images/chaos-1.svg");
+    background-position: center;
+    background-size: cover;
+    align: center;    
   }
 
 }
@@ -162,7 +174,12 @@ input[type=number]{
   }
 
   .chaos-image {
+    height: 200px;
+    width: auto ;    
     background-image: url("./images/chaos-2.svg");
+    background-position: center;
+    background-size: cover;
+    align: center;
   }
 
 }
