@@ -20,6 +20,7 @@ const AttributeSpan = styled.span`
 function CharacterList(props) {
   const [charData, setCharData] = useState([]);
 
+
   useEffect(() => {
     setCharData(props.data);
   }, [props.data]);    

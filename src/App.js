@@ -84,6 +84,10 @@ function App() {
     racesID();
   }, []);
 
+  useEffect(() => {
+    retrieveAllCharacters();
+  }, [saveResults]);
+
   function hideDiv(e){
     console.log(e.target.className);
   }
@@ -113,7 +117,11 @@ function App() {
           />
         </Route>
         <Route path="/display">
-          <CharacterList data={allCharacters} setSelectedCharacter={setSelectedCharacter} selectedCharacter={selectedCharacter}/>
+          <CharacterList 
+            data={allCharacters} 
+            setSelectedCharacter={setSelectedCharacter} 
+            selectedCharacter={selectedCharacter}
+          />
           {/* <CharacterDisplay selectedCharacter={selectedCharacter}/> */}
           <CharacterDisplay selectedCharacter={allCharacters[0]}/>
         </Route>

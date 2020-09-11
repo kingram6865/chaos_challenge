@@ -1,6 +1,10 @@
+div {
+  margin: 2px 0;
+}
+
 .saved-character-info {
   border: 2px solid #80B918;
-  border-radius: 25px;
+  /* border-radius: 25px; */
 }
 
 label {
@@ -15,8 +19,8 @@ label {
 .attrib-value {
   background-color: #2B9348;
   color: #BFD200;
-  padding: 4px;
-  font-weight: bold;
+  padding: 1px;
+  /* font-weight: bold; */
   margin: 0 4px;
   border-radius: 15px;
   text-align: center;
