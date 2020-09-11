@@ -4,15 +4,14 @@ import { generateAttribute, generateRace, generateClass } from '../services/inde
 /**
  * Generate a complete character randomly.
  * 
- * @param {*} props 
- * 
  */
 
 function GeneratorButton(props) {
   let { characterStats, setCharacterStats } = props;
 
-  function createCharacterStats(){
-    setCharacterStats({...characterStats, 
+  function createCharacterStats() {
+    setCharacterStats({
+      ...characterStats,
       'strength': generateAttribute(),
       'dexterity': generateAttribute(),
       'constitution': generateAttribute(),
@@ -22,7 +21,7 @@ function GeneratorButton(props) {
       'characterClass': generateClass(),
       'characterRace': generateRace()
     });
-    
+
   }
 
   return (

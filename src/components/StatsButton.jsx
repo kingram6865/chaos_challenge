@@ -7,15 +7,14 @@ import './StatsButton.css';
  * 1D8 for Race and 1D12 for Class.
  * Generator functions declared and coded in src/services/index.js
  * 
- * @param {*} props 
  */
 function StatsButton(props) {
   const { stat, setCharacterStats, characterStats } = props;
 
-  function generateStat(){
-    if (stat==='characterClass'){
+  function generateStat() {
+    if (stat === 'characterClass') {
       setCharacterStats({ ...characterStats, 'characterClass': generateClass() });
-    } else if (stat==='characterRace'){
+    } else if (stat === 'characterRace') {
       setCharacterStats({ ...characterStats, 'characterRace': generateRace() });
     } else {
       setCharacterStats({ ...characterStats, [stat]: generateAttribute() });
@@ -23,8 +22,8 @@ function StatsButton(props) {
   }
 
   return (
-    <button 
-      onClick={()=> generateStat()}
+    <button
+      onClick={() => generateStat()}
     >{props.name}</button>
   )
 }

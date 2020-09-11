@@ -43,12 +43,12 @@ function CharacterInputForm(props) {
     characterRace: 0
   });
 
-  function handleData(info, target){
+  function handleData(info, target) {
     setSaveState((saveState === 'disabled') ? setSaveState('') : saveState);
-    setCharacterStats({...characterStats, [target]: info});
+    setCharacterStats({ ...characterStats, [target]: info });
   }
 
-  useEffect(() =>{
+  useEffect(() => {
 
   }, [characterStats]);
 
@@ -57,7 +57,7 @@ function CharacterInputForm(props) {
       <div className="data-instructions">
         To save stats, enter a character name and a player name, then
         <ol>
-          <li>enter each stat manually OR</li> 
+          <li>enter each stat manually OR</li>
           <li>randomly select individual stats OR</li>
           <li>generate all stats at once.</li>
         </ol>
@@ -66,70 +66,70 @@ function CharacterInputForm(props) {
         <div className="data-id">
           <span>
             <label htmlFor="playerName">Player Name: </label>
-            <input name="playerName" type="text" placeholder="Player Name" onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-            </span>
+            <input name="playerName" type="text" placeholder="Player Name" onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+          </span>
           <span>
             <label htmlFor="characterName">Character Name: </label>
-            <input name="characterName" type="text" placeholder="Character Name" onChange={(e)=>{handleData(e.target.value,e.target.name)}} /> 
-            </span>
+            <input name="characterName" type="text" placeholder="Character Name" onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+          </span>
         </div>
         <div className="attributes">
           <div className="data-physical">
             <span>
               <label htmlFor="strength">Strength:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-              <input name="strength" type="number" value={characterStats.strength} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-              <StatsButton name="Roll Str" stat="strength" setCharacterStats={setCharacterStats} characterStats={characterStats} /> 
-              </span><br />
+              <input name="strength" type="number" value={characterStats.strength} onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+              <StatsButton name="Roll Str" stat="strength" setCharacterStats={setCharacterStats} characterStats={characterStats} />
+            </span><br />
             <span>
               <label htmlFor="dexterity">Dexterity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-              <input name="dexterity" type="number" value={characterStats.dexterity} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-              <StatsButton name="Roll Dex" stat="dexterity" characterStats={characterStats} setCharacterStats={setCharacterStats}/> 
-              </span><br />
+              <input name="dexterity" type="number" value={characterStats.dexterity} onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+              <StatsButton name="Roll Dex" stat="dexterity" characterStats={characterStats} setCharacterStats={setCharacterStats} />
+            </span><br />
             <span>
               <label htmlFor="constitution">Constitution:&nbsp;</label>
-              <input name="constitution" type="number" value={characterStats.constitution} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-              <StatsButton name="Roll Con" stat="constitution" characterStats={characterStats} setCharacterStats={setCharacterStats}/> 
-              </span><br />
+              <input name="constitution" type="number" value={characterStats.constitution} onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+              <StatsButton name="Roll Con" stat="constitution" characterStats={characterStats} setCharacterStats={setCharacterStats} />
+            </span><br />
           </div>
           <div className="data-mental">
             <span>
               <label htmlFor="intelligence">Intelligence:&nbsp;&nbsp;</label>
-              <input name="intelligence" type="number" value={characterStats.intelligence} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-              <StatsButton name="Roll Int" stat="intelligence" characterStats={characterStats} setCharacterStats={setCharacterStats}/> 
-              </span><br />
+              <input name="intelligence" type="number" value={characterStats.intelligence} onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+              <StatsButton name="Roll Int" stat="intelligence" characterStats={characterStats} setCharacterStats={setCharacterStats} />
+            </span><br />
             <span>
               <label htmlFor="wisdom">Wisdom:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-              <input name="wisdom" type="number" value={characterStats.wisdom} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-              <StatsButton name="Roll Wis" stat="wisdom" characterStats={characterStats} setCharacterStats={setCharacterStats}/> 
-              </span><br />
+              <input name="wisdom" type="number" value={characterStats.wisdom} onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+              <StatsButton name="Roll Wis" stat="wisdom" characterStats={characterStats} setCharacterStats={setCharacterStats} />
+            </span><br />
             <span>
               <label htmlFor="charisma">Charisma:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-              <input name="charisma" type="number" value={characterStats.charisma} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-              <StatsButton name="Roll Cha" stat="charisma" characterStats={characterStats} setCharacterStats={setCharacterStats}/> 
+              <input name="charisma" type="number" value={characterStats.charisma} onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+              <StatsButton name="Roll Cha" stat="charisma" characterStats={characterStats} setCharacterStats={setCharacterStats} />
             </span><br />
           </div>
         </div>
         <div className="data-intrinsic">
           <span>
             <label htmlFor="characterRace">Race: </label>
-            <input name="characterRace" type="number" placeholder="Race" value={characterStats.characterRace} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-            <StatsButton name="Roll Race" stat="characterRace" characterStats={characterStats} setCharacterStats={setCharacterStats}/>
+            <input name="characterRace" type="number" placeholder="Race" value={characterStats.characterRace} onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+            <StatsButton name="Roll Race" stat="characterRace" characterStats={characterStats} setCharacterStats={setCharacterStats} />
           </span><br />
           <span>
             <label htmlFor="class">Class: </label>
-            <input name="characterClass" type="number" placeholder="Class" value={characterStats.characterClass} onChange={(e)=>{handleData(e.target.value,e.target.name)}} />
-            <StatsButton name="Roll Class" stat="characterClass" characterStats={characterStats} setCharacterStats={setCharacterStats}/>
+            <input name="characterClass" type="number" placeholder="Class" value={characterStats.characterClass} onChange={(e) => { handleData(e.target.value, e.target.name) }} />
+            <StatsButton name="Roll Class" stat="characterClass" characterStats={characterStats} setCharacterStats={setCharacterStats} />
           </span><br />
         </div>
         <Buttons>
-          <GeneratorButton setCharacterStats={setCharacterStats} characterStats={characterStats} />  
-          <SaveButton 
+          <GeneratorButton setCharacterStats={setCharacterStats} characterStats={characterStats} />
+          <SaveButton
             status={saveState}
             data={characterStats}
             classData={classData}
             raceData={raceData}
-            saveResults={saveResults} 
-            setSaveResults={setSaveResults}            
+            saveResults={saveResults}
+            setSaveResults={setSaveResults}
           />
         </Buttons>
       </InputStyle>

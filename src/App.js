@@ -88,8 +88,12 @@ function App() {
     retrieveAllCharacters();
   }, [saveResults]);
 
-  function hideDiv(e){
-    console.log(e.target.className);
+  function hideDiv(id){
+    console.log(`Trigger hide ${id} div`);
+  }
+
+  function selectionClick(id){
+    console.log(`You are here: [${id}]`);
   }
 
   /**
@@ -100,9 +104,9 @@ function App() {
   return (
     <div className="App">
       <div className="app-title">D&amp;D Chaos Challenge Character Generator</div>
-      <div className="mobile" onClick={(e) => hideDiv(e)}>Default Arrangement for Mobile</div>
-      <div className="tablet" onClick={(e) => hideDiv(e)}>Default Arrangement for Tablet</div>
-      <div className="desktop" onClick={(e) => hideDiv(e)}>Default Arrangement for Laptop/Desktop</div>
+      <div className="mobile" onClick={() => hideDiv("mobile")}>Default Arrangement for Mobile</div>
+      <div className="tablet" onClick={() => hideDiv("tablet")}>Default Arrangement for Tablet</div>
+      <div className="desktop" onClick={() => hideDiv("desktop")}>Default Arrangement for Laptop/Desktop</div>
       <nav>
       <Link to="/">Create a Character</Link>
         <Link to="/display">Saved Characters</Link>
@@ -114,6 +118,7 @@ function App() {
             raceData={raceData}
             saveResults={saveResults} 
             setSaveResults={setSaveResults}
+            onClick={() => selectionClick("Create A Character")}
           />
         </Route>
         <Route path="/display">
@@ -121,9 +126,10 @@ function App() {
             data={allCharacters} 
             setSelectedCharacter={setSelectedCharacter} 
             selectedCharacter={selectedCharacter}
+            onClick={() => selectionClick("Saved Characters")}
           />
-          {/* <CharacterDisplay selectedCharacter={selectedCharacter}/> */}
-          <CharacterDisplay selectedCharacter={allCharacters[0]}/>
+          <CharacterDisplay selectedCharacter={selectedCharacter}/>
+          {/* <CharacterDisplay selectedCharacter={allCharacters[0]}/> */}
         </Route>
       </Switch>
   <div className="saved-state">{saveResults}</div>

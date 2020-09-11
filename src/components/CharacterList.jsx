@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import './CharacterList.css';
 
@@ -19,57 +20,68 @@ const AttributeSpan = styled.span`
 `
 function CharacterList(props) {
   const [charData, setCharData] = useState([]);
+  const { setSelectedCharacter } = props;
 
+  async function updateList(input) {
+    const url = `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_AIRTABLE_BASE}/characters/${input}`;
+    const response = await axios.get(url, {
+      headers: {
+        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
+      }
+    });
+
+    setSelectedCharacter(response.data);
+  }
 
   useEffect(() => {
     setCharData(props.data);
-  }, [props.data]);    
+  }, [props.data]);
 
   return (
     <div className="base">
       <div className="component-title">Characters Created ({charData.length} total)</div>
       <div className="data-character-list">
-      <TableStyle>
-      <table>
-        <tbody>
-          <tr>
-            <th>Player Name</th>
-            <th>Character Name</th>
-            <th>Stats</th>
-            <th>Class</th>
-            <th>Race</th>
-          </tr>
-        {
-          charData.map((item, idx) => (
-          <tr 
-            onClick={(e)=>console.log(e)}
-            data-id={item.id}  
-            key={idx}>
-              <td>{item.fields.playerName}</td>
-              <td>{item.fields.characterName}</td>
-              <td className="stats">
-                {`{`}
-                <AttributeSpan className="str">{`str: ${item.fields.strength}, `}</AttributeSpan> 
-                <AttributeSpan className="dex">{`dex: ${item.fields.dexterity}, `}</AttributeSpan>
-                <AttributeSpan className="con">{`con: ${item.fields.constitution}, `}</AttributeSpan>
-                <AttributeSpan className="int">{`int: ${item.fields.intelligence}, `}</AttributeSpan>
-                <AttributeSpan className="wis">{`wis: ${item.fields.wisdom}, `}</AttributeSpan>
-                <AttributeSpan className="cha">{`cha: ${item.fields.charisma}, `}</AttributeSpan>
-              </td>
-              <td>
-              <ClassSpan style={{backgroundColor: `#${item.fields.classColor}`}}>{`${item.fields.className}`}</ClassSpan>
-              </td>
-              <td>
-              {`${item.fields.raceName}`}
-              </td>
-          </tr>
-          ))
-        }
-        </tbody>
-      </table>
-      </TableStyle>
+        <TableStyle>
+          <table>
+            <tbody>
+              <tr>
+                <th>Player Name</th>
+                <th>Character Name</th>
+                <th>Stats</th>
+                <th>Class</th>
+                <th>Race</th>
+              </tr>
+              {
+                charData.map((item, idx) => (
+                  <tr
+                    onClick={() => updateList(item.id)}
+                    data-id={item.id}
+                    key={idx}>
+                    <td>{item.fields.playerName}</td>
+                    <td>{item.fields.characterName}</td>
+                    <td className="stats">
+                      {`{`}
+                      <AttributeSpan className="str">{`str: ${item.fields.strength}, `}</AttributeSpan>
+                      <AttributeSpan className="dex">{`dex: ${item.fields.dexterity}, `}</AttributeSpan>
+                      <AttributeSpan className="con">{`con: ${item.fields.constitution}, `}</AttributeSpan>
+                      <AttributeSpan className="int">{`int: ${item.fields.intelligence}, `}</AttributeSpan>
+                      <AttributeSpan className="wis">{`wis: ${item.fields.wisdom}, `}</AttributeSpan>
+                      <AttributeSpan className="cha">{`cha: ${item.fields.charisma}, `}</AttributeSpan>
+                    </td>
+                    <td>
+                      <ClassSpan style={{ backgroundColor: `#${item.fields.classColor}` }}>{`${item.fields.className}`}</ClassSpan>
+                    </td>
+                    <td>
+                      {`${item.fields.raceName}`}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </TableStyle>
       </div>
-  </div>    
+    </div>
   )
 }
 

@@ -11,25 +11,26 @@ import axios from 'axios';
 
 function SaveButton(props) {
   const { status, data, classData, raceData, setSaveResults } = props;
-  
-  function classID(id){
+
+  function classID(id) {
     const info = classData.find(obj => {
       return obj.roll === id
     });
     return info;
   }
-  
-  function raceID(id){
+
+  function raceID(id) {
     const info = raceData.find(obj => {
       return obj.roll === id
     });
     return info;
   }
 
-  async function saveRecord(e){
+  async function saveRecord(e) {
     const url = process.env.REACT_APP_BASE_URL + process.env.REACT_APP_AIRTABLE_BASE + "/characters";
+    const today = new Date();
     const fields = {
-      entryDate: new Date(),
+      entryDate: `${today}`,
       playerName: data.playerName,
       characterName: data.characterName,
       strength: data.strength,
@@ -40,35 +41,35 @@ function SaveButton(props) {
       charisma: data.charisma,
       class: [
         classID(data.characterClass).id
-        ],
+      ],
       race: [
         raceID(data.characterRace).id
-        ]
+      ]
     }
 
     const response = await axios.post(url, { fields },
       {
-       headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        'Content-Type': 'application/json'
-       } 
-      }      
+        headers: {
+          'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      }
     );
-    
+
     setSaveResults(`Saved ${data.characterName} at ${response.data.createdTime}`);
   }
 
   return (
     <div>
-    {
-      (status === 'disabled') 
-      ? <button disabled>Save Character</button>
-      : <button 
-          onClick={
-            (e) => saveRecord(e)
-          }
-        >Save Character</button>
-    }
+      {
+        (status === 'disabled')
+          ? <button disabled>Save Character</button>
+          : <button
+            onClick={
+              (e) => saveRecord(e)
+            }
+          >Save Character</button>
+      }
     </div>
   )
 }

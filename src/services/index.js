@@ -27,3 +27,19 @@ export function generateRace(){
 export function generateClass(){
 	return getDieRoll(12);
 }
+
+export function getDate(choice){
+  const today = new Date();
+  const year = today.getUTCFullYear();
+  const month = today.getUTCMonth();
+  const day = today.getUTCDay();
+  const hours = today.getUTCHours();
+  const minutes = today.getUTCDay();
+  const seconds = today.getUTCSeconds();
+
+  if (choice === 'std') {
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  } else if (choice === 'utc'){
+    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.000Z`;
+  }  
+}
