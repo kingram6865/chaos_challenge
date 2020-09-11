@@ -9,14 +9,15 @@ label {
 
 .info-label {
   color: #007F5F;
-  font-weight: bold;
   margin: 0 5px;
 }
 
 .attrib-value {
   background-color: #2B9348;
   color: #BFD200;
-  padding: 0 2px;
+  padding: 4px;
   font-weight: bold;
-  margin: 4px 0;
+  margin: 0 4px;
+  border-radius: 15px;
+  text-align: center;
 }

@@ -84,6 +84,10 @@ function App() {
     racesID();
   }, []);
 
+  function hideDiv(e){
+    console.log(e.target.className);
+  }
+
   /**
    * <CharacterInputForm /> handles character creation logic
    * <CharacterList /> handles presentation of already created characters
@@ -92,9 +96,9 @@ function App() {
   return (
     <div className="App">
       <div className="app-title">D&amp;D Chaos Challenge Character Generator</div>
-      <div className="mobile">Default Arrangement for Mobile</div>
-      <div className="tablet">Default Arrangement for Tablet</div>
-      <div className="desktop">Default Arrangement for Laptop/Desktop</div>
+      <div className="mobile" onClick={(e) => hideDiv(e)}>Default Arrangement for Mobile</div>
+      <div className="tablet" onClick={(e) => hideDiv(e)}>Default Arrangement for Tablet</div>
+      <div className="desktop" onClick={(e) => hideDiv(e)}>Default Arrangement for Laptop/Desktop</div>
       <nav>
       <Link to="/">Create a Character</Link>
         <Link to="/display">Saved Characters</Link>
@@ -115,6 +119,7 @@ function App() {
         </Route>
       </Switch>
   <div className="saved-state">{saveResults}</div>
+  <div className="chaos-image"></div>
     </div>
   );
 }

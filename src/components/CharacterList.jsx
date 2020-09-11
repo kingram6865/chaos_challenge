@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import React from 'react';
-// import axios from 'axios';
 import styled from 'styled-components';
 import './CharacterList.css';
 
@@ -14,42 +12,21 @@ const TableStyle = styled.div`
 const ClassSpan = styled.span`
   border-radius: 5px;
   color: white;
-  font-weight: bold;
   padding: 0 2px;
 `
-
 const AttributeSpan = styled.span`
   border-radius: 5px;
 `
-
 function CharacterList(props) {
   const [charData, setCharData] = useState([]);
-  // const charData = props.data;
-  
-  // async function retrieveCharacters(){
-  //   const url = `${process.env.REACT_APP_AIRTABLE_BASE}`;
-  //   const response = await axios.get(url, {
-  //     headers: {
-  //       'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
-  //     }
-  //   });
-  //   console.log(response.data.records);
-  //   setCharData(response.data.records);
-  // }
-  
+
   useEffect(() => {
-    // retrieveCharacters();
     setCharData(props.data);
   }, [props.data]);    
 
   return (
     <div className="base">
       <div className="component-title">Characters Created ({charData.length} total)</div>
-      {/**
-        Want to create a scrolling table here of maybe a few rows at a time
-        on the mobile presentation, but more on the tablet and desktop views
-      
-       */}
       <div className="data-character-list">
       <TableStyle>
       <table>
@@ -91,13 +68,6 @@ function CharacterList(props) {
       </table>
       </TableStyle>
       </div>
-      {/* <ul>
-        {characters.map((character, index) => (
-          <li key={index}>{character.playerName}</li>
-        ))}
-      </ul> */}
-
-
   </div>    
   )
 }

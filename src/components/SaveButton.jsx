@@ -26,7 +26,6 @@ function SaveButton(props) {
     return info;
   }
 
-
   async function saveRecord(e){
     const url = process.env.REACT_APP_BASE_URL + process.env.REACT_APP_AIRTABLE_BASE + "/characters";
     const fields = {

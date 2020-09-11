@@ -5,4 +5,16 @@ button {
   color: #D4D700;
   border-color: #2B9348;
   margin: 4px 0 2px 2px;
+  box-shadow: 0 9px #999;
+  font-family: "Bangers", monospace;
+  letter-spacing: 1px;
 }
+
+button:hover {background-color: #2B9348}
+
+button:after {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+

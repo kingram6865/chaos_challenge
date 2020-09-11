@@ -49,8 +49,7 @@ function CharacterInputForm(props) {
   }
 
   useEffect(() =>{
-    // console.log(characterStats);
-    // alert("Rendering");
+
   }, [characterStats]);
 
   return (

@@ -117,9 +117,9 @@ Minimum features:
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Build Components | H | 4 hr |  |  |
-| Code Components | H | 12 hr |  |  |
-| Organize Layout (CSS) | H | 12 hr  | | |
-| Media Query Adjustments| H | 6 hrs | | |
-| Post-MVP| L | 15 hrs |  | |
-| Total                             | H | 49 hrs|  |  |
+| Build Components | H | 4 hrs |6hrs  |6.5hrs  |
+| Code Components | H | 12 hrs |16hrs  |16hrs  |
+| Organize Layout (CSS) | H | 12 hr  |11hrs |11hrs |
+| Media Query Adjustments| H | 6 hrs |4hrs | 4hrs |
+| Post-MVP| L | 15 hrs |2hrs  |2hrs |
+| Total                             | H | 49 hrs|42hrs  |39.5hrs  |

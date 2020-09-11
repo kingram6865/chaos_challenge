@@ -13,14 +13,5 @@
 }
 
 table {
-  /* white-space: nowrap; */
-  /* table-layout:fixed; */
   width: 1000px;
-}
-.stats {
-  /* width: 310px; */
-}
-
-@media only screen and (min-width:1024px) { 
-  overflow-x: none;
 }
