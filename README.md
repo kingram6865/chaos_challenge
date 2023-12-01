@@ -107,6 +107,7 @@ Minimum features:
  - Component => Add a character image (svg, jpg, gif, png)
  - Component => Character bio
  - Gamemaster version => A repository of games and associated characters, tied to a player (user's) character
+ - Build an actual API (Postgres DBMS for datastore; CRUD compliant; deployed on a server)
 
 ## 8. SWOT Analysis
 
@@ -124,4 +125,4 @@ Minimum features:
 | Organize Layout (CSS) | H | 12 hr  |11hrs |11hrs |
 | Media Query Adjustments| H | 6 hrs |4hrs | 4hrs |
 | Post-MVP| L | 15 hrs |2hrs  |2hrs |
-| Total                             | H | 49 hrs|42hrs  |39.5hrs  |
+| Total  |--- | 49 hrs|42hrs  |39.5hrs  |
