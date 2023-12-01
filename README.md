@@ -1,6 +1,6 @@
 
 ## 1. Title
-Chaos Challenge
+Chaos Challenge - My General Assembly Software Engineering Intensive Unit 2 Final Project 
 ## 2. Description
 Chaos Challenge is short for D&D Chaos Challenge Character Generator
 
