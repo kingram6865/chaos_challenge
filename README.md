@@ -21,6 +21,7 @@ This was a humorous take on character creation, as often players spend hours cra
 ![Chaos Challenge Wireframe at Cloundinary](https://res.cloudinary.com/dk8xr0vts/image/upload/c_scale,w_411/v1599239439/Project%201/Project%202/D_D_Chaos_Challenge_Character_Generator_Tablet_elt4if.png)
 
 ## 4. Component Hierarchy
+```pre
 Main Container (App)
 | --- Input Form (Player Name, Character Name, character stats)
     | --- Input fields => Input specific individual stat
@@ -30,6 +31,7 @@ Main Container (App)
     | --- Character Bio (Update API)
     | --- Character Image (Update API) 
 | --- Saved Character list (Users archive of generated characters)
+```
 
 ## 5. API
 ```  
